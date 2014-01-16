@@ -1,0 +1,49 @@
+<head>
+<style>
+blink {
+  -webkit-animation: blink 1s steps(5, start) infinite;
+  -moz-animation:    blink 1s steps(5, start) infinite;
+  -o-animation:      blink 1s steps(5, start) infinite; 
+  animation:         blink 1s steps(5, start) infinite;
+}
+
+@-webkit-keyframes blink {
+  to { visibility: hidden; }
+}
+@-moz-keyframes blink {
+  to { visibility: hidden; }
+}
+@-o-keyframes blink {
+  to { visibility: hidden; }
+}
+@keyframes blink {
+  to { visibility: hidden; }
+}
+  </style>
+</head>
+<body>
+  <script>
+    blink(0.7);
+
+function blink(speed) {
+
+    if (speed) {
+        if (document.getElementsByTagName('blink')) 
+            setInterval("blink()", speed*5);
+
+        return; 
+    }
+
+    var blink = document.getElementsByTagName('blink');
+
+    for (var i=0; i<blink.length; i++) {
+        blink[i].style.visibility = blink[i].style.visibility == "" ? "hidden" : "";
+    }
+}
+  </script>
+<h1>Hello There You Scallywags</h1>
+
+  <blink>Kool</blink>
+  
+
+</body>
